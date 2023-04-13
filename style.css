@@ -1,0 +1,88 @@
+*{margin: 0; padding: 0;box-sizing: border-box}
+
+:root{
+    --bg-main:#28303a;
+    --bg-card:#e3f3d8;
+    --border-color: rgb(0, 255, 255);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    height: 100vh;
+    background-color: var(--bg-main);
+}
+h1{
+    color: #fff;
+    font-family: "Lexend Deca Light";
+    font-size: 4rem;
+}
+span{
+    color: var(--border-color);
+}
+
+#card-section{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 2rem;
+}
+
+.card {
+    position: relative;
+    transition: all .4s linear;
+    transform-style: preserve-3d;
+}
+
+.card,
+.back-card,
+.front-card {
+    height: 5rem;
+    width: 5rem;
+}
+
+.back-card,
+.front-card {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front-card {
+    background-color: rgb(0, 255, 255);
+    background-size: 100px;
+    border-radius: .6rem;
+    box-shadow: rgba(127, 164, 201, 0.2) 0px 8px 24px;
+    padding: 2rem;
+}
+
+.back-card {
+    transform: rotateY(180deg);
+    background-color: #6589F9;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: rgba(243, 244, 240, 0.2) 0px 8px 24px;
+    padding: 2rem;
+}
+
+.card_selected{
+    transform: rotateY(180deg);
+}
+
+.card-match .front-card{
+    background-color: var(--bg-card);
+}
+
+#start{
+    background-color: rgb(83, 234, 83);
+    padding: 10px;
+    margin: 2px;
+    border: 2px solid black;
+    border-radius: 20% ;
+}
+#start:hover{
+    cursor: pointer;
+    background-color: green;
+}
